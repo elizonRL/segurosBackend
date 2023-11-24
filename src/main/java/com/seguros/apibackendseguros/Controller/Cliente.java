@@ -1,31 +1,23 @@
 package com.seguros.apibackendseguros.Controller;
 
-import com.seguros.apibackendseguros.models.PolizaModels;
-import com.seguros.apibackendseguros.service.PolizaServise;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.Query;
-import jakarta.servlet.http.HttpServletRequest;
+import com.seguros.apibackendseguros.models.ClienteModels;
+import com.seguros.apibackendseguros.service.CienteServise;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/poliza")
+@RequestMapping("/cliente")
 public class Cliente {
-
     @Autowired
-    private PolizaServise polizaServise;
-    @PersistenceContext
-    private EntityManager em ;
-
-    @CrossOrigin(origins = "http://localhost:63342")
+    private CienteServise cienteServise;
     @GetMapping
-    public ArrayList<PolizaModels> obtenerClientes(@RequestParam String num_poliza){
 
-       return (ArrayList<PolizaModels>) this.polizaServise.getPolizas(num_poliza);
+    public ArrayList<ClienteModels> obtenerClientes(){
+        return this.cienteServise.obtenerClientes();
     }
 
 }
