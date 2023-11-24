@@ -7,11 +7,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.ArrayList;
@@ -24,6 +20,8 @@ public class Cliente {
     private PolizaServise polizaServise;
     @PersistenceContext
     private EntityManager em ;
+
+    @CrossOrigin(origins = "http://localhost:63342")
     @GetMapping
     public ArrayList<PolizaModels> obtenerClientes(@RequestParam String num_poliza){
 
