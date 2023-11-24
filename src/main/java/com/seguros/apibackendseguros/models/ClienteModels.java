@@ -14,6 +14,8 @@ public class ClienteModels {
     private String apellido;
     private String cedula;
 
+
+
     public long getId() {
         return id;
     }
