@@ -1,5 +1,6 @@
 package com.seguros.apibackendseguros.repositories;
 
+
 import com.seguros.apibackendseguros.models.PolizaModels;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -16,4 +17,4 @@ public interface IPoliza extends JpaRepository<PolizaModels, Long> {
 
     @Query(value = "{call obtener_poliza_por_numero(?)}", nativeQuery = true)
     public List<PolizaModels> getPoliza(String num_poliza);
-}
+
