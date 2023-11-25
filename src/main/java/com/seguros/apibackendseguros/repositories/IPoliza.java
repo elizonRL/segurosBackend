@@ -14,6 +14,6 @@ import java.util.List;
 @Repository
 public interface IPoliza extends JpaRepository<PolizaModels, Long> {
 
-    @Query(value = "{call obtener_poliza_por_numero(num_poliza)}", nativeQuery = true)
+    @Query(value = "{call obtener_poliza_por_numero(?)}", nativeQuery = true)
     public List<PolizaModels> getPoliza(String num_poliza);
 }
